@@ -11,24 +11,24 @@
 // 123.045.067.089
 
 function isValidIP(str) {
+    let isValid = true
+
     const arrayIP = str.split('.')
     if (arrayIP.length !== 4){
         return false
-    } 
-    let isValid = true
+    }
 
     arrayIP.forEach(num => {
         let numInt = parseInt(num)
         if (numInt <= 0 || numInt >= 255){
             isValid = false
+        } else if (numInt !== 0 && num.startsWith('0')){
+            isValid = false
         }
     }
-    
-
     )
-
-    //remove starting with 0, if i[0] then false
     return isValid
   }
 
-  console.log(isValidIP("123.45.67.89"))
+  console.log(isValidIP("123b.4e5.67.89"))
+  console.log(parseNum)
